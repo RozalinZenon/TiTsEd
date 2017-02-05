@@ -166,7 +166,7 @@ namespace TiTsEd.Model
             }
         }
 
-        bool RemoveKey(object key)
+        protected bool RemoveKey(object key)
         {
             int index;
             if (IsIndex(key, out index))
@@ -188,7 +188,7 @@ namespace TiTsEd.Model
             }
         }
 
-        void RemoveDenseIndex(int index)
+        protected void RemoveDenseIndex(int index)
         {
             // We're going to remove 4, so we need to add 5 and higher to the associative part
             for (int i = index + 1; i < _densePart.Count; ++i)
@@ -287,7 +287,7 @@ namespace TiTsEd.Model
             return true;
         }
 
-        void DecrementSparseIndicesGreaterThan(int index)
+        protected void DecrementSparseIndicesGreaterThan(int index)
         {
             if (_sparsePart.Count == 0) return;
 
@@ -305,7 +305,7 @@ namespace TiTsEd.Model
             MergeSparsePartIntoDensePart();
         }
 
-        void MergeSparsePartIntoDensePart()
+        protected void MergeSparsePartIntoDensePart()
         {
             // Before we had 0-4 and 6, we added 5, so we merge 6 and higher into the dense part
             object nextDenseValue;
@@ -370,12 +370,12 @@ namespace TiTsEd.Model
             return Enumerate().GetEnumerator();
         }
 
-        bool IsDenseIndex(int index)
+        protected bool IsDenseIndex(int index)
         {
             return index >= 0 && index < _densePart.Count;
         }
 
-        bool IsIndex(object key, out int index)
+        protected bool IsIndex(object key, out int index)
         {
             if (key == null)
             {
@@ -415,7 +415,7 @@ namespace TiTsEd.Model
             return false;
         }
 
-        static bool TryConvertForEqualityComparison(ref object x, TypeCode type)
+        protected static bool TryConvertForEqualityComparison(ref object x, TypeCode type)
         {
             switch(type)
             {

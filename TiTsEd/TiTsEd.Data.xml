@@ -123,6 +123,128 @@
 		</CopyTags>
 	</General>
 	<!-- ================================================================ -->
+	<CodexEntries>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Anatae]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Ausar]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Cundarians]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Daynar]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Dzaan]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Fanfir]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Galotians]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Gryvain]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Humans]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Kaithrit]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Kalabast/Fhan’i]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Kui-Tan]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Laquines]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Leithans]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Mothrine]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Ovir]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Rahn]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Rodenians]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Roehm]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Saeri]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Saurmorians]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Siel]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Simii]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Slyverens]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Spinarrans]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Suulas]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Tarratch]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Thraggen]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Toves]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Varmints]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Vildarii]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Vulkrimi]]></CodexEntry>
+		<CodexEntry Type="RACE" Group="Core Worlds"><![CDATA[Xhelarfog]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Cunt Snakes]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Kerokoras]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Mimbranes]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Naleen]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Vanae]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Venus Pitchers]]></CodexEntry>
+		<CodexEntry Type="RACE_MHENGA" Group="Mhen'ga"><![CDATA[Zil]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Sand Worms]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Gabilani]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Gray Goos]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Lapinara]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Raskvel]]></CodexEntry>
+		<CodexEntry Type="RACE_TARKUS" Group="Tarkus"><![CDATA[Sydians]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Bothrioc]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Cockvines]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Ganrael]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Gold Myr]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Myr Fungus]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Nyrea]]></CodexEntry>
+		<CodexEntry Type="RACE_MYRELLION" Group="Myrellion"><![CDATA[Red Myr]]></CodexEntry>
+		<CodexEntry Type="RACE_UVETO" Group="Uveto"><![CDATA[Essyras]]></CodexEntry>
+		<CodexEntry Type="RACE_UVETO" Group="Uveto"><![CDATA[Frostwyrm]]></CodexEntry>
+		<CodexEntry Type="RACE_UVETO" Group="Uveto"><![CDATA[Korgonne]]></CodexEntry>
+		<CodexEntry Type="RACE_UVETO" Group="Uveto"><![CDATA[Lurelings]]></CodexEntry>
+		<CodexEntry Type="RACE_UVETO" Group="Uveto"><![CDATA[Milodan]]></CodexEntry>
+		<CodexEntry Type="ROBOT" Group="Androids"><![CDATA[V-Ko]]></CodexEntry>
+		<CodexEntry Type="ROBOT" Group="Androids"><![CDATA[V-Ko IVs]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Aegis]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[BI/G]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Camarilla]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Humphard Inc.]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[J’ejune]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[JoyCo]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[KihaCorp]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Nova Securities]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Pyrite]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Reaper]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[RhenWorld]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[SagiTom]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Snugglé]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Steele Tech]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Corporations"><![CDATA[Xenogen]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Factions"><![CDATA[Black Void]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Factions"><![CDATA[J.A.F.]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Factions"><![CDATA[Scarlet Federation]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Factions"><![CDATA[T.S.C.]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Factions"><![CDATA[U.G.C.]]></CodexEntry>
+		<CodexEntry Type="ORGANIZATION" Group="Religions"><![CDATA[Stormguard]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Illegal Items"><![CDATA[Dumbfuck]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Illegal Items"><![CDATA[Gush]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Illegal Items"><![CDATA[Tentatool]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Illegal Items"><![CDATA[Throbb]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Illegal Items"><![CDATA[The Treatment]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[BionaHoles]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Bubble Buddy]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[ClearYu]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[FizzyFix]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Grav Cuffs]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Holodom]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Muffstick]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Rubber-Made]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[Suma Cream]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Legal Items"><![CDATA[SynthSheath]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Technology"><![CDATA[AI Systems]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Technology"><![CDATA[Item Mechanics]]></CodexEntry>
+		<CodexEntry Type="ITEM" Group="Technology"><![CDATA[Maia Series AI]]></CodexEntry>
+		<CodexEntry Type="MEDICAL" Group="General Knowledge"><![CDATA[Taint]]></CodexEntry>
+		<CodexEntry Type="MEDICAL" Group="SSTDs"><![CDATA[Furpies]]></CodexEntry>
+		<CodexEntry Type="MEDICAL" Group="SSTDs"><![CDATA[Locofever]]></CodexEntry>
+		<CodexEntry Type="MEDICAL" Group="SSTDs"><![CDATA[Sneezing Tits]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[||||||||]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Assistant]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Becoming One...]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Bull’s Strength]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[BXBI: I]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[BXBI: II]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Captured...]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Cow Stuff]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Diverting Jokes]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Dildo Snakes]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Dragon’s Hoard]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Fuck the System]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Satyr Slave]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Stolen Goods]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Tentacles & Tanukis]]></CodexEntry>
+		<CodexEntry Type="STORY" Group="Fiction"><![CDATA[Tower of Trials]]></CodexEntry>
+	</CodexEntries>
+	<!-- ================================================================ -->
 	<Body>
 		<SkinTypes>
 			<SkinType ID="0" Name="Skin" />

@@ -28,6 +28,7 @@ namespace TiTsEd.ViewModel {
             SetCharacterOptions();
             setCharacter("PC");
             SaveFile = new AmfObjectVM(file);
+            CodexManager = new CodexManagerVM(this, file);
 
             var shittyShips = GetObj("shittyShips") ?? new AmfObject(AmfTypes.Array);
             Ships = new ShipArrayVM(this, shittyShips);
@@ -442,6 +443,12 @@ namespace TiTsEd.ViewModel {
                     }
                 }
             }
+        }
+
+        public CodexManagerVM CodexManager
+        {
+            get;
+            private set;
         }
 
         public AmfObjectVM SaveFile
