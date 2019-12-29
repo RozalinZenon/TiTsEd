@@ -508,4 +508,17 @@ namespace TiTsEd.Model
         public bool IsDocument { get; set; }
         public string Content { get; set; }
     }
+
+    public class AmfObjectObject : AmfObject
+    {
+        public AmfObjectObject() : base(AmfTypes.Object)
+        {
+        }
+    }
+
+    public class AmfArray : AmfObject
+    {
+        public AmfArray() : base(AmfTypes.Array)
+        { }
+    }
 }
