@@ -7382,6 +7382,7 @@
 			<StatusEffect Name="KIRO_FUCKING_PAIGE" IsHidden="true" />
 			<StatusEffect Name="KIRO_FUCKING_PC" IsHidden="true" />
 			<StatusEffect Name="KIRO_TEMP_DISABLED" IsHidden="true" />
+			<StatusEffect Name="Lash Marks" Description="Walking and checking your appearance may damage you!" IconName="Icon_Crying" IconShade="16711680" MinutesLeft="8640" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
 			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
@@ -7437,6 +7438,8 @@
 			<StatusEffect Name="SURFPASS" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
+			<StatusEffect Name="Tenderized" Description="-20% Kinetic and Electric resistance.
++40% Lust resistance." IconName="Icon_Paralysis" IconShade="16711680" MinutesLeft="4320" />
 			<StatusEffect Name="Ula Pussthirst" IsHidden="true" />
 			<StatusEffect Name="URBOLG_DISABLED" IsHidden="true" />
 			<StatusEffect Name="URBOLG_DISABLED_BY_COOKIES" IsHidden="true" />
