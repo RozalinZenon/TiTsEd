@@ -7209,6 +7209,7 @@
 			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum High Cooldown" IsHidden="true" />
+			<StatusEffect Name="Cynthia Away" IsHidden="true" />
 			<StatusEffect Name="Doll Maker Repair Timer" IsHidden="true" Minutes="1440" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
@@ -7350,12 +7351,15 @@
 			<StatusEffect Name="Syri Pennybating" IsHidden="true" />
 			<StatusEffect Name="TaurDisable" IsHidden="true" />
 			<StatusEffect Name="ThiccGobDisable" IsHidden="true" />
+			<StatusEffect Name="Uveto Blizzard" IsHidden="true" />
+			<StatusEffect Name="Uveto Clear" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
 			<StatusEffect Name="BadgerMindwash" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
 			<StatusEffect Name="Beta's Satisfaction" Description="You've recently sated your desire for your alpha's cum, and can think only of her. You take less damage from lust-damaging attacks." IconName="Icon_Charmed" Value1="2" IconShade="16738740" />
+			<StatusEffect Name="Bitterly Cold" Description="The bitter, piercing cold of Uveto’s icy tundra threatens to chill you to the bone. Better wrap up nice and tight, maybe even find something to heat you up to better stave off the freezing winds." IconName="Icon_Snowflake" IconShade="6149605" />
 			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
 			<StatusEffect Name="DILDO" IsHidden="true" />
 			<StatusEffect Name="Ditzy Strobed" IsHidden="true" />
@@ -7378,6 +7382,7 @@
 			<StatusEffect Name="KIRO_FUCKING_PAIGE" IsHidden="true" />
 			<StatusEffect Name="KIRO_FUCKING_PC" IsHidden="true" />
 			<StatusEffect Name="KIRO_TEMP_DISABLED" IsHidden="true" />
+			<StatusEffect Name="Lash Marks" Description="Walking and checking your appearance may damage you!" IconName="Icon_Crying" IconShade="16711680" MinutesLeft="8640" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
 			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
@@ -7433,6 +7438,8 @@
 			<StatusEffect Name="SURFPASS" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
+			<StatusEffect Name="Tenderized" Description="-20% Kinetic and Electric resistance.
++40% Lust resistance." IconName="Icon_Paralysis" IconShade="16711680" MinutesLeft="4320" />
 			<StatusEffect Name="Ula Pussthirst" IsHidden="true" />
 			<StatusEffect Name="URBOLG_DISABLED" IsHidden="true" />
 			<StatusEffect Name="URBOLG_DISABLED_BY_COOKIES" IsHidden="true" />
