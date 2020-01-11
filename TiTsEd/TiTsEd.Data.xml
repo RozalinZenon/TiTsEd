@@ -2638,6 +2638,7 @@
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Evermilk" Value1="5000" />
+			<Perk Name="Ever-Milk" Value1="5000" />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
@@ -2652,7 +2653,7 @@
 			<Perk Name="Whore-Stamped" Description="Marks you as the whore that you are." />
 		</PerkGroup>
 		<PerkGroup Name="Treatment">
-			<Perk Name="Amazonian Needs" Description="Increases minimum lust by 20." Label1="Minimum Lust Mod" Value1="20" Comment="The Value1 doesn't actually get used" />
+			<Perk Name="Amazonian Needs" Description="Increases minimum lust by {Value1}." Label1="Minimum Lust Mod" Value1="20" />
 			<Perk Name="Amazonian Endurance" Description="Allows you to orgasm without fatiguing." />
 			<Perk Name="Amazonian Virility" Description="Ensures you never ejaculate less than 300 mLs." />
 			<Perk Name="Auto-Autofellatio" Description="Makes you so enamored of yourself that you can't resist some auto-fellatio." />
@@ -7184,8 +7185,10 @@
 			<StatusEffect Name="Charged Weapon" Description="Weapon is electrified and will deal bonus damage based upon current intellectual capacity." />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
+			<StatusEffect Name="Lust Staggered" />
 			<StatusEffect Name="Shields Damaged" />
 			<StatusEffect Name="Stagger Immune" IsHidden="true" />
+			<StatusEffect Name="Staggered" Description="Shizuya is staggered, and her aim and reflexes have been reduced!" />
 			<StatusEffect Name="Stealth Field" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
 			<StatusEffect Name="Sundered" Description="Defense is reduced by 50%!" />
@@ -7342,6 +7345,7 @@
 			<StatusEffect Name="Premium Breeder Cheek Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
 			<StatusEffect Name="Premium Breeder Crotch Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
 			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
+			<StatusEffect Name="Rat Delay" IsHidden="true" MinutesLeft="4320" />
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
 			<StatusEffect Name="Ship Repair Paused" IsHidden="true" />
@@ -7401,6 +7405,8 @@
 			<StatusEffect Name="NT Build Bottle Plant Repeat" IsHidden="true" />
 			<StatusEffect Name="NT Male Milker Disabled" IsHidden="true" />
 			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" Comment="Bio-Silicone Levels" />
+			<StatusEffect Name="Oil Warmed" Description="You’re covered in warm, protective oil!
+Freezing Resistance: +14%" IconName="Icon_Water_Drop" IconShade="16743001" MinutesLeft="1230" />
 			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
 			<StatusEffect Name="Ovalasting" IsHidden="true" />
 			<StatusEffect Name="PAIGE_KIRO_COCKPATH" IsHidden="true" />
