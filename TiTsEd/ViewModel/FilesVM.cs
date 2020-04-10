@@ -17,7 +17,9 @@ using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel {
     public static class FileManagerVM {
-        public static IEnumerable<IMenuVM> GetOpenMenus() {
+        public static IEnumerable<IMenuVM> GetOpenMenus()
+        {
+            Logger.Trace("GetOpenMenus: Begin");
             foreach (var dir in FileManager.GetDirectories()) {
                 yield return new SourceDirectoryVM(dir);
             }
@@ -25,7 +27,9 @@ namespace TiTsEd.ViewModel {
             yield return new ImportRootVM();
         }
 
-        public static IEnumerable<IMenuVM> GetSaveMenus() {
+        public static IEnumerable<IMenuVM> GetSaveMenus()
+        {
+            Logger.Trace("GetSaveMenus: Begin");
             foreach (var dir in FileManager.GetDirectories()) {
                 yield return new TargetDirectoryVM(dir);
             }
@@ -216,7 +220,7 @@ namespace TiTsEd.ViewModel {
                     byte[] buffer = new byte[4];
                     fs.Read(buffer, 0, buffer.Length);
 
-                    VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
+                    VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported);
                 }
             } catch (System.UnauthorizedAccessException ex) {
                 Logger.Error(ex);
@@ -358,7 +362,7 @@ namespace TiTsEd.ViewModel {
 
         public void OnClick() {
             if (_openOnClick) {
-                VM.Instance.Load(Source.FilePath, SerializationFormat.Slot, createBackup: _directoryKind != DirectoryKind.Backup);
+                VM.Instance.Load(Source.FilePath, SerializationFormat.Slot);
             } else {
                 VM.Instance.Save(Source.FilePath, Source.Format);
             }

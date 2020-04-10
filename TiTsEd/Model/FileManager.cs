@@ -40,6 +40,11 @@ namespace TiTsEd.Model
             Kind = kind;
             HasSeparatorBefore = hasSeparatorBefore;
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0}:{1}:{2}", Name, Path, Kind);
+        }
     }
 
     public static class FileManager
@@ -79,6 +84,8 @@ namespace TiTsEd.Model
 
         public static void BuildPaths()
         {
+            Logger.Trace("BuildPaths: Begin");
+
             Result = FileEnumerationResult.Success;
 
             string chromeAppPath = @"Google\Chrome\User Data\";
@@ -125,10 +132,13 @@ namespace TiTsEd.Model
 
             BuildNpapiPath("Online (Edge/Metro{0})", @"#AppContainer\www.fenoxo.com", ref insertSeparatorBeforeInMenu);
 
+            Logger.Trace("BuildPaths: End");
         }
 
         static void BuildAIRPath(string nameFormat, ref bool separatorBefore)
         {
+            Logger.Trace(String.Format("BuildAIRPath({0})", nameFormat));
+
             string path = "";
             try
             {
@@ -172,31 +182,32 @@ namespace TiTsEd.Model
                     _directories.Add(flash);
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
-            }
 
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
+            }
         }
 
         static void BuildNpapiPath(string nameFormat, string suffix, ref bool separatorBefore)
         {
+            Logger.Trace(String.Format("BuildNpapiPath({0}, {1})", nameFormat, suffix));
+
             string path = "";
             try
             {
@@ -240,30 +251,32 @@ namespace TiTsEd.Model
                     saveNum++;
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
+
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
             }
         }
 
         static void BuildPpapiPath(string nameFormat, Environment.SpecialFolder appDataPath, string appPath, string appProfilePattern, string suffix, ref bool separatorBefore)
         {
+            Logger.Trace(String.Format("BuildPpapiPath({0}, {1}, {2}, {3}, {4})", nameFormat, appDataPath, appPath, appProfilePattern, suffix));
+
             // …\AppData\Local\Google\Chrome\User Data\{app_profile}\Pepper Data\Shockwave Flash\WritableRoot\#SharedObjects\{flash_profile}\{suffix}
             // …\AppData\Roaming\Opera Software\{app_profile}\Pepper Data\Shockwave Flash\WritableRoot\#SharedObjects\{flash_profile}\{suffix}
 
@@ -345,30 +358,32 @@ namespace TiTsEd.Model
                     saveNum++;
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
+
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
             }
         }
 
         public static IEnumerable<FlashDirectory> GetDirectories()
         {
+            Logger.Trace("GetDirectories");
+
             foreach (var dir in _directories)
             {
                 yield return CreateDirectory(dir);
@@ -378,6 +393,8 @@ namespace TiTsEd.Model
 
         public static FlashDirectory CreateBackupDirectory()
         {
+            Logger.Trace("CreateBackupDirectory:Begin");
+
             var dir = new FlashDirectory("Backup", BackupPath, true, DirectoryKind.Backup);
 
             var dirInfo = new DirectoryInfo(BackupPath);
@@ -385,21 +402,29 @@ namespace TiTsEd.Model
             {
                 AddFileToDirectory(dir, filePath);
             }
+
+            Logger.Trace(String.Format("CreateBackupDirectory:End {0}", dir));
             return dir;
         }
 
         static FlashDirectory CreateExternalDirectory()
         {
+            Logger.Trace("CreateExternalDirectory:Begin");
+
             var dir = new FlashDirectory("External", "", true, DirectoryKind.External);
             foreach (var filePath in _externalPaths)
             {
                 AddFileToDirectory(dir, filePath);
             }
+
+            Logger.Trace(String.Format("CreateExternalDirectory:End {0}", dir));
             return dir;
         }
 
         static FlashDirectory CreateDirectory(FlashDirectory dir)
         {
+            Logger.Trace(String.Format("CreateDirectory({0})",dir));
+
             dir = new FlashDirectory(dir.Name, dir.Path, dir.HasSeparatorBefore, DirectoryKind.Regular);
             if (String.IsNullOrEmpty(dir.Path))
             {
@@ -411,45 +436,52 @@ namespace TiTsEd.Model
                 var filePath = Path.Combine(dir.Path, "TiTs_" + i + ".sol");
                 AddFileToDirectory(dir, filePath);
             }
+
+            Logger.Trace(String.Format("CreateDirectory:End {0}", dir));
             return dir;
         }
 
         private static bool AddFileToDirectory(FlashDirectory dir, string filePath)
         {
-            if (!File.Exists(filePath))
-            {
-                return false;
-            }
+            Logger.Trace(String.Format("AddFileToDirectory({0},{1})", dir, filePath));
 
-            var amfFile = new AmfFile(filePath);
-            if (null != amfFile.Error)
+            bool added = false;
+            if (File.Exists(filePath))
             {
-                ResultPath = filePath;
-                switch (amfFile.Error.Type)
+                var amfFile = new AmfFile(filePath);
+                if (null != amfFile.Error)
                 {
-                    case AmfFileError.Error.NoPermission:
-                        Result = FileEnumerationResult.NoPermission;
-                        return false;
+                    ResultPath = filePath;
+                    switch (amfFile.Error.Type)
+                    {
+                        case AmfFileError.Error.NoPermission:
+                            Result = FileEnumerationResult.NoPermission;
+                            break;
 
-                    case AmfFileError.Error.Unreadable:
-                        Result = FileEnumerationResult.Unreadable;
-                        return false;
+                        case AmfFileError.Error.Unreadable:
+                            Result = FileEnumerationResult.Unreadable;
+                            break;
 
-                    case AmfFileError.Error.Unknown:
-                        Result = FileEnumerationResult.Unknown;
-                        return false;
-
-                    default:
-                        Result = FileEnumerationResult.Unknown;
-                        return false;
+                        default:
+                            Result = FileEnumerationResult.Unknown;
+                            break;
+                    }
+                }
+                else
+                {
+                    dir.Files.Add(amfFile);
+                    added = true;
                 }
             }
-            dir.Files.Add(amfFile);
-            return true;
+
+            Logger.Trace(String.Format("AddFileToDirectory:End {0}", added));
+            return added;
         }
 
         public static void TryRegisterExternalFile(string path)
         {
+            Logger.Trace(String.Format("TryRegisterExternalFile({0}",path));
+
             path = Canonicalize(path);
 
             // Is it a regular file?
@@ -474,10 +506,14 @@ namespace TiTsEd.Model
             }
 
             _externalPaths.Add(path);
+
+            Logger.Trace("TryRegisterExternalFile: End");
         }
 
         static bool AreParentAndChild(string dirPath, string filePath)
         {
+            Logger.Trace(String.Format("AreParentAndChild({0},{1})",dirPath,filePath));
+
             if (String.IsNullOrEmpty(dirPath))
             {
                 return false;
@@ -491,6 +527,8 @@ namespace TiTsEd.Model
 
         static bool AreDirectoriesSame(string dirA, string dirB)
         {
+            Logger.Trace(String.Format("AreDirectoriesSame({0},{1})", dirA, dirB));
+
             if (String.IsNullOrEmpty(dirA))
             {
                 return String.IsNullOrEmpty(dirB);
@@ -518,38 +556,27 @@ namespace TiTsEd.Model
 
         public static void CreateBackup(string sourcePath)
         {
+            Logger.Trace(String.Format("CreateBackup({0})", sourcePath));
+
             var backupDir = new DirectoryInfo(BackupPath);
 
             try
             {
-                if (!Directory.Exists(BackupPath))
-                {
-                    Directory.CreateDirectory(BackupPath);
-                }
-                var existingFiles = backupDir.GetFiles("*.bak").OrderByDescending(x => x.LastWriteTimeUtc).ToArray();
                 CopyToBackupPath(sourcePath);
-
-                if (TryDeleteIdenticalFile(sourcePath, existingFiles))
-                {
-                    return;
-                }
+                var existingFiles = backupDir.GetFiles("*.bak").OrderByDescending(x => x.LastWriteTimeUtc).ToArray();
 
                 for (int i = MaxBackupFiles; i < existingFiles.Length; ++i)
                 {
-                    existingFiles[i].Delete();
+                    Logger.Log(String.Format("Deleting backup {0}", existingFiles[i]));
+                    try
+                    {
+                        existingFiles[i].Delete();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
+                    }
                 }
-            }
-            catch (SecurityException se)
-            {
-                Logger.Error(se);
-            }
-            catch (UnauthorizedAccessException uae)
-            {
-                Logger.Error(uae);
-            }
-            catch (IOException ioe)
-            {
-                Logger.Error(ioe);
             }
             catch (Exception e)
             {
@@ -560,62 +587,25 @@ namespace TiTsEd.Model
 
         static void CopyToBackupPath(string sourcePath)
         {
+            Logger.Trace(String.Format("CopyToBackupPath({0})", sourcePath));
+
             var targetName = DateTime.UtcNow.Ticks + ".bak";
             var targetPath = Path.Combine(BackupPath, targetName);
-            File.Copy(sourcePath, targetPath, true);
+            Logger.Log(String.Format("CopyToBackupPath: {0} to {1}", sourcePath, targetPath));
+            try
+            {
+                if (!Directory.Exists(BackupPath))
+                {
+                    Logger.Log(String.Format("Creating Backup Directory {0}", BackupPath));
+                    Directory.CreateDirectory(BackupPath);
+                }
+                File.Copy(sourcePath, targetPath, true);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
-        static bool TryDeleteIdenticalFile(string sourcePath, FileInfo[] existingFiles)
-        {
-            var sourceData = File.ReadAllBytes(sourcePath);
-
-            foreach (var file in existingFiles)
-            {
-                if (AreIdentical(file, sourceData))
-                {
-                    file.Delete();
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        static bool AreIdentical(FileInfo x, byte[] yData)
-        {
-            if (null == x)
-            {
-                if (null != yData)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                if ((0 == x.Length) && (null == yData))
-                {
-                    return true;
-                }
-
-                if (x.Length != yData.Length)
-                {
-                    return false;
-                }
-
-                var xData = File.ReadAllBytes(x.FullName);
-                for (int i = 0; i < xData.Length; ++i)
-                {
-                    if (xData[i] != yData[i])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
     }
 }

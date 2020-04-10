@@ -65,8 +65,10 @@ namespace TiTsEd.ViewModel
             get { return (null != CurrentFile); }
         }
 
-        public void Load(string path, SerializationFormat expectedFormat, bool createBackup)
+        public void Load(string path, SerializationFormat expectedFormat)
         {
+            Logger.Debug(String.Format("Load({0}, {1})", path, expectedFormat.ToString()));
+
             FileManager.TryRegisterExternalFile(path);
             var file = new AmfFile(path);
             var dataVersion = file.GetString("version");
@@ -131,10 +133,6 @@ namespace TiTsEd.ViewModel
                 box.ShowDialog(ExceptionBoxButtons.OK);
             }
 
-            if (createBackup)
-            {
-                FileManager.CreateBackup(path);
-            }
             CurrentFile = file;
 
             XmlData.Select(XmlData.Files.TiTs);
@@ -177,20 +175,15 @@ namespace TiTsEd.ViewModel
             bool error = false;
             try
             {
+                FileManager.CreateBackup(path);
+
                 Game.BeforeSerialization();
                 CurrentFile.Save(path, format);
                 FileManager.TryRegisterExternalFile(path);
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
-                error = true;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                error = true;
-            }
-            catch (Exception)
-            {
+                Logger.Error(ex);
                 error = true;
             }
 
@@ -323,12 +316,12 @@ namespace TiTsEd.ViewModel
 
         public bool HasValue(object key)
         {
-            return _obj.Contains(key);
+            return (null != _obj) ? _obj.Contains(key) : false;
         }
 
         public object GetValue(object key)
         {
-            return _obj[key];
+            return (null != _obj) ? _obj[key] : null;
         }
 
         public double GetDouble(object key, double? defaultValue = 0)
@@ -338,22 +331,22 @@ namespace TiTsEd.ViewModel
 
         public int GetInt(object key, int? defaultValue = 0)
         {
-            return _obj.GetInt(key, defaultValue);
+            return (null != _obj) ? _obj.GetInt(key, defaultValue) : 0;
         }
 
         public string GetString(object key)
         {
-            return _obj.GetString(key);
+            return (null != _obj) ? _obj.GetString(key) : null;
         }
 
         public bool GetBool(object key, bool? defaultValue = false)
         {
-            return _obj.GetBool(key, defaultValue);
+            return (null != _obj) ? _obj.GetBool(key, defaultValue) : false;
         }
 
         public AmfObject GetObj(object key)
         {
-            return _obj.GetObj(key);
+            return (null != _obj) ? _obj.GetObj(key) : null;
         }
 
         public virtual bool SetValue(object key, object value, string propertyName = null)
